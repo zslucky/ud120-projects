@@ -51,7 +51,8 @@ print sum(pred)
 #########################################################
 ### Result:
 
-#### kenel=linear: 0.984072810011
+#### kenel=linear
+###### - accuracy: 0.984072810011
 ###### - training time: 214.120304823s
 ###### - prediction time: 24.7667920589s
 

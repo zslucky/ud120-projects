@@ -28,17 +28,40 @@ plt.show()
 ################################################################################
 
 
-### your code here!  name your classifier object clf if you want the 
+### your code here!  name your classifier object clf if you want the
 ### visualization code (prettyPicture) to show you the decision boundary
 
+from time import time
+from sklearn.neighbors import  KNeighborsClassifier
 
+clf = KNeighborsClassifier(n_neighbors=5)
 
+t0 = time()
+clf.fit(features_train, labels_train)
+print "training time: ", (time() - t0), 's'
 
-
-
-
+t1 = time()
+accuracy = clf.score(features_test, labels_test)
+print "prediction time: ", (time() - t1), 's'
 
 try:
     prettyPicture(clf, features_test, labels_test)
 except NameError:
     pass
+
+
+# KNN
+#########################################################
+### Result:
+
+#### n_neighbors=3
+###### - accuracy: 0.978953356086
+###### - training time: 74.8643209934 s
+###### - prediction time: 0.0397131443024 s
+
+#### n_neighbors=10
+###### - accuracy: 0.967007963595
+###### - training time: 5.15142321587 s
+###### - prediction time: 0.00214195251465 s
+
+#########################################################
